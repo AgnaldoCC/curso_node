@@ -67,14 +67,15 @@ router.post('/forgot-password', async (req, res) => {
       template: 'forgotPassword',
       context: { token }
     }, (err) => {
-      if(err){
-        console.log('error-----------------', err);
+      if (err) {
+        console.log(err)
         res.status(400).send({ error: "Não pode enviar a senha" })
       }
       res.send()
     })
 
   } catch (error) {
+    console.log(error)
     res.status(400).send({ error: "Erro ao recuperar a senha" })
   }
 })

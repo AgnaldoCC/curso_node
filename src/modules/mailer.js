@@ -10,9 +10,9 @@ const transport = nodemailer.createTransport({
 });
 
 transport.use('compile', hbs({
-  viewEngine: { partialsDir: '/' },
-  viewPath: './resources/mail',
-  extName: '.html',
+  viewEngine: { partialsDir: '/teste', defaultLayout: false },
+  viewPath: path.resolve('./resources/mail/'),
+  extName: '.html'
 }))
 
 module.exports = transport
